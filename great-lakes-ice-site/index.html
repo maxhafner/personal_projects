@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Great Lakes Ice Watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Live NOAA Data</p>
+        <h1>Great Lakes Ice Watch</h1>
+        <p class="hero-copy">
+          See each lake fill with ice in real time, plus recent trend history.
+        </p>
+      </header>
+
+      <section class="summary" aria-live="polite">
+        <div>
+          <p class="label">Great Lakes Total</p>
+          <p class="total-value" id="overall-total">--%</p>
+          <p class="last-updated" id="last-updated">Loading latest observation...</p>
+        </div>
+        <div class="total-meter-wrap">
+          <div class="total-meter-track">
+            <div class="total-meter-fill" id="overall-meter"></div>
+          </div>
+          <p class="meter-caption" id="overall-caption">Collecting data</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Lake-by-Lake Ice Fill</h2>
+          <p id="status-pill" class="status-pill">Fetching</p>
+        </div>
+        <p class="history-note" id="history-note">Loading history...</p>
+        <div id="lake-grid" class="lake-grid"></div>
+      </section>
+
+      <section class="sources">
+        <h3>Source</h3>
+        <p>
+          Data is fetched from NOAA GLERL ERDDAP dataset
+          <a href="https://apps.glerl.noaa.gov/erddap/info/glerlIce/index.html" target="_blank" rel="noreferrer">
+            glerlIce
+          </a>.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
